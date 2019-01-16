@@ -27,4 +27,19 @@ class TasksController extends Controller
 
         return $Task;
     }
+
+    public function deleteTask(Request $request){
+        $id = $request->input('id');
+        $task = Task::find($id);
+        $task->delete();
+
+        $response = array('id' => $id);
+        return $response;
+    }
+
+    public function getOneTask(Request $request){
+        $id = $request->input('id');
+        $task = Task::find($id);
+        return response()->json($task);
+    }
 }

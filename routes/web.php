@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::post('/add', 'TasksController@addTask');
 Route::get('/get', 'TasksController@getTasks');
+Route::post('/delete', 'TasksController@deleteTask');
+Route::post('/show', 'TasksController@getOneTask');
